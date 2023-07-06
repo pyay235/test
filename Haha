@@ -1,0 +1,28 @@
+import random
+
+# Define a dictionary of questions and answers
+qa_pairs = {
+    "What is your name?": "My name is Chatbot.",
+    "How are you?": "I'm doing well, thank you!",
+    "What is the weather like today?": "I'm sorry, I don't have access to the internet.",
+    "Tell me a joke.": "Sure! Why don't scientists trust atoms? Because they make up everything!",
+    "Goodbye": "Goodbye! Have a great day!"
+}
+
+# Function to generate a response based on user input
+def get_response(user_input):
+    if user_input in qa_pairs:
+        return qa_pairs[user_input]
+    else:
+        return "I'm sorry, I don't understand. Could you please rephrase your question?"
+
+# Main chat loop
+print("Welcome to the Offline Chatbot!")
+
+while True:
+    user_question = input("You: ")
+    response = get_response(user_question)
+    print("Chatbot:", response)
+
+    if user_question.lower() == "goodbye":
+        break
